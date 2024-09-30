@@ -72,6 +72,9 @@ public class main {
         file.add(fileSave);
 
         jFrame.setJMenuBar(jMenuBar);
+/*
+Получилось таки сделать две панели, но надо будет поработать над ними!!!
+*/
 
         JPanel contentPane = new JPanel(new GridBagLayout());
 
