@@ -73,6 +73,26 @@ public class main {
 
         jFrame.setJMenuBar(jMenuBar);
 
+        JPanel contentPane = new JPanel(new GridBagLayout());
+
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.BOTH;
+        constraints.weightx = 0.5;
+        constraints.weighty = 1.0;
+
+        JPanel hexPanel = new JPanel();
+        hexPanel.setBackground(Color.GRAY);
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        contentPane.add(hexPanel, constraints);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.CYAN);
+        constraints.gridx = 1;
+        constraints.gridy = 0;
+        contentPane.add(buttonPanel, constraints);
+
+        jFrame.add(contentPane);
 
         jFrame.setSize(800, 700);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
