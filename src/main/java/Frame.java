@@ -36,7 +36,9 @@ public class Frame extends JFrame {
         contentPane.add(rightPanel, constraints);
 
         add(contentPane);
-
+        /*
+        hexPanel.add(Menu.createTable(Menu.HexReader.readHexFromFile(String.valueOf(file)));
+         */
         setVisible(true);
    }
 
