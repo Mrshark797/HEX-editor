@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 public class Frame extends JFrame {
     public JMenuBar jMenuBar;
@@ -36,10 +37,6 @@ public class Frame extends JFrame {
 
         add(contentPane);
 
-        JTable jTable = new JTable(16, 16);
-
-        jTable.setSize(400, 100);
-        hexPanel.add(jTable);
         setVisible(true);
    }
 
