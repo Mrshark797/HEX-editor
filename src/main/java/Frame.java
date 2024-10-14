@@ -1,45 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.List;
 
-public class Frame extends JFrame {
-    public JMenuBar jMenuBar;
-
-
-    public Frame(String title) {
+public class Frame extends JFrame{
+    public Frame(String title){
         super(title);
-        setSize(800, 700);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(700,600);
         setLocationRelativeTo(null);
 
-        setJMenuBar(new Menu(this).getjMenuBar());
+        // Создаем объект Menu и передаем в него JFrame
+        Menu menu = new FileOpenInHEX(this);
 
 
-        JPanel hexPanel = new JPanel();
-        hexPanel.setBackground(Color.GRAY);
+        // Устанавливаем меню для JFrame
+        setJMenuBar(menu.getjMenuBar());
 
-        JPanel rightPanel = new JPanel();
-        rightPanel.setBackground(Color.GREEN);
 
-        JPanel contentPane = new JPanel(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-        constraints.fill = GridBagConstraints.BOTH;
-        constraints.weightx = 0.5;
-        constraints.weighty = 1;
-
-        constraints.gridx = 0;
-        constraints.gridy = 0;
-        contentPane.add(hexPanel, constraints);
-
-        constraints.gridx = 1;
-        constraints.gridy = 0;
-        contentPane.add(rightPanel, constraints);
-
-        add(contentPane);
-        /*
-        hexPanel.add(Menu.createTable(Menu.HexReader.readHexFromFile(String.valueOf(file)));
-         */
         setVisible(true);
-   }
-
+    }
 }
